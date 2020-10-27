@@ -15,18 +15,20 @@ Supports:
 
 Prerequisites: **Python3**
 
-1. Install dependencies
+### dependencies
 
+1. `pip`
 ```
 pip install -r requirements.txt
 ```
+2. config file
 
-Add the following fields in `hms_config.txt` config file:
+Add the following fields in `hms_config.txt` config file beside the script:
 
 * `client_id`: From Huawei console (`appId`)
 * `client_secret`: From Huawei console (`appSecret`)
 
-Run the script:
+### Run the script:
 
 ```
 python3 hms_send.py [OPTIONS]
@@ -41,7 +43,7 @@ python3 hms_send.py [OPTIONS]
 |`-d`/`--data`|Data to send as data message.<br>Data messages can be either Json or String. To pass json you must Wrap the wole json in double quotes(`"`) and use single quoutes to for json keys and values.<br>For example `-d "{'key':'value'}"`. Otherwise HMS might not be able to parse it on the clientside.|
 |`-v`/`--verbose`|See debug logs of script|
 
-### Example
+#### Example
 
 `hms_config.txt`:
 ```

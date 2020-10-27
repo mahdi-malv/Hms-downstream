@@ -1,3 +1,4 @@
 argparse
 asyncio
 requests
+configparser

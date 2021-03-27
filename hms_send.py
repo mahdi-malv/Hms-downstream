@@ -114,8 +114,8 @@ async def fetchAccessToken(client_id, client_secret):
         log('Error getting access_token: ' + e)
         return False
 
-async def sendMessage(access_token, data, tokens):
-    url = "https://push-api.cloud.huawei.com/v1/103003929/messages:send"
+async def sendMessage(access_token, data, client_id, tokens):
+    url = f"https://push-api.cloud.huawei.com/v1/{client_id}/messages:send"
     message = {
         'message': {
             'message_id': "Message#",
@@ -150,7 +150,7 @@ async def main():
     else:
         token = access_token
 
-    sendResult = await sendMessage(access_token=token, data=payload, tokens=tokens)
+    sendResult = await sendMessage(access_token=token, data=payload, client_id=clientId, tokens=tokens)
     print(sendResult)
 
 if __name__ == "__main__":
